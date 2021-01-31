@@ -29,10 +29,22 @@ run(host="localhost", port=8080, debug=True)
 """
 # サンプル３
 静的ルーティング
-"""
+
 @route('/hello')
 def hello():
     return template("view/index.tpl")
+
+run(host="localhost", port=8080, debug=True)
+"""
+
+"""
+# サンプル４
+動的ルーティング
+"""
+@route('/hello')
+@route('/hello/<name>')
+def hello(name="しらんがなー"):
+    return template("view/index_d.tpl", nm=name)
 
 run(host="localhost", port=8080, debug=True)
 
