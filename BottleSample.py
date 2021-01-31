@@ -21,3 +21,5 @@ def greet(name='Stranger'):
     return template('Hello {{name}}, how are you?', name=name)
 
 run(host="localhost", port=8080, debug=True)
+# vaioは固定IPとしたので、外部のクライアントから問い合わせる場合はこちらでrunする
+#run(host="192.168.10.201", port=8080, debug=True)
