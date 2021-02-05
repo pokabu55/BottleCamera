@@ -40,11 +40,26 @@ run(host="localhost", port=8080, debug=True)
 """
 # サンプル４
 動的ルーティング
-"""
+
 @route('/hello')
 @route('/hello/<name>')
 def hello(name="しらんがなー"):
     return template("view/index_d.tpl", nm=name)
 
 run(host="localhost", port=8080, debug=True)
+"""
 
+"""
+# サンプル５
+HTTPのメソッド
+"""
+from bottle import get
+# GETメソッドで /hello にアクセスされたときに hello() を実行する
+
+# route か get のどっちか
+#@route('/hello')
+@get('/hello')
+def hello():
+    return '<b>Hello World</b>!'
+
+run(host="localhost", port=8080, debug=True)
