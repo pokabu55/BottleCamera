@@ -1,1 +1,4 @@
-.captured.jpg
+# Environments
+.venv
+env/
+venv/
